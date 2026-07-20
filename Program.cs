@@ -6,101 +6,87 @@ namespace CsharpSession1
     {
         static void Main(string[] args)
         {
-            /////////////////////////////////////////////////////////////////
-            Console.WriteLine("== [1] Personal Info ==");
-            string empName = "Abdulraheem";
-            int userAge = 21;
-            double empHeight = 1.65;
-            bool studentStatus = true;
+            // TASK 1 - Personal Info Card
+            string name = "Abdulraheem";
+            int age = 21;
+            double height = 1.65;
+            bool isStudent = true;
 
-            Console.WriteLine("Name: " + empName + ", Age: " + userAge + ", Height: " + empHeight + ", Student: " + studentStatus);
-            Console.WriteLine();
+            Console.WriteLine("Name: " + name + ", Age: " + age + ", Height: " + height + ", Student: " + isStudent);
 
 
-            /////////////////////////////////////////////////////////////////
-            Console.WriteLine("== [2] Rectangle Calc ==");
-            Console.Write("Enter length: ");
-            double L = Convert.ToDouble(Console.ReadLine());
+            // TASK 2 - Rectangle Calculator
+            Console.Write("Please Enter Length: ");
+            double length = double.Parse(Console.ReadLine());
 
-            Console.Write("Enter width: ");
-            double W = double.Parse(Console.ReadLine());
+            Console.Write("Please Enter Width: ");
+            double width = double.Parse(Console.ReadLine());
 
-            double rArea = L * W;
-            double rPerimeter = 2 * (L + W);
+            double area = length * width;
+            double perimeter = 2 * (length + width);
 
-            Console.WriteLine("Calculated Area -> " + rArea);
-            Console.WriteLine("Calculated Perimeter -> " + rPerimeter);
-            Console.WriteLine();
+            Console.WriteLine("Area = " + area);
+            Console.WriteLine("Perimeter = " + perimeter);
 
 
-            /////////////////////////////////////////////////////////////////
-            Console.WriteLine("== [3] Even / Odd ==");
-            Console.Write("Type any whole number: ");
-            int inputNum = Convert.ToInt32(Console.ReadLine());
+            // TASK 3 - Even or Odd Checker
+            Console.Write("Please Enter a Whole Number: ");
+            int number = int.Parse(Console.ReadLine());
 
-            if (inputNum % 2 == 0)
+            if (number % 2 == 0)
             {
-                Console.WriteLine("Result: Even");
+                Console.WriteLine("The number is even");
             }
             else
             {
-                Console.WriteLine("Result: Odd");
+                Console.WriteLine("The number is odd");
             }
-            Console.WriteLine();
 
 
-            ///////////////////////////////////////////////////////////////
-            Console.WriteLine("== [4] Vote Check ==");
-            Console.Write("How old are you? ");
-            int myAge = int.Parse(Console.ReadLine());
+            // TASK 4 - Voting Eligibility
+            Console.Write("Please Enter Your Age: ");
+            int voterAge = int.Parse(Console.ReadLine());
 
-            Console.Write("Do you have a National ID? (yes/no): ");
-            string idAnswer = Console.ReadLine().Trim().ToLower();
+            Console.Write("Do you have valid ID? (yes/no): ");
+            string hasId = Console.ReadLine();
 
-            bool isIdValid = (idAnswer == "yes");
-
-            if (myAge >= 18 && isIdValid)
+            if (voterAge >= 18 && hasId == "yes")
             {
-                Console.WriteLine("Status: You can vote.");
+                Console.WriteLine("Eligible to vote");
             }
             else
             {
-                Console.WriteLine("Status: Not allowed to vote.");
+                Console.WriteLine("Not eligible to vote");
             }
-            Console.WriteLine();
 
 
-            /////////////////////////////////////////////////////////////////
-            Console.WriteLine("== [5] Grades Lookup ==");
-            Console.Write("Enter Grade (A-F): ");
-            char userGrade = char.Parse(Console.ReadLine().ToUpper());
+            // TASK 5 - Grade Letter Lookup
+            Console.Write("Please Enter Grade Letter: ");
+            char grade = char.Parse(Console.ReadLine());
 
-            switch (userGrade)
+            switch (grade)
             {
                 case 'A':
-                    Console.WriteLine("Result -> Excellent");
+                    Console.WriteLine("Excellent");
                     break;
                 case 'B':
-                    Console.WriteLine("Result -> Very Good");
+                    Console.WriteLine("Very Good");
                     break;
                 case 'C':
-                    Console.WriteLine("Result -> Good");
+                    Console.WriteLine("Good");
                     break;
                 case 'D':
-                    Console.WriteLine("Result -> Pass");
+                    Console.WriteLine("Pass");
                     break;
                 case 'F':
-                    Console.WriteLine("Result -> Fail");
+                    Console.WriteLine("Fail");
                     break;
                 default:
-                    Console.WriteLine("Result -> Invalid grade entered");
+                    Console.WriteLine("Invalid grade");
                     break;
             }
-            Console.WriteLine();
 
-            /////////////////////////////////////////////////////////////////
-            Console.WriteLine("=================================");
-            Console.WriteLine("Done executing tasks.");
+           
             Console.ReadLine();
         }
     }
